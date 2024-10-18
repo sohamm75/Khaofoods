@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<style>
+ /* Navbar start */
+ .khao{
+      font-family: "Jacques Francois Shadow", serif;
+      font-weight: 400;
+      font-style: normal;
+      }
+      .navbar{
+        
+        background-color: rgba(255, 255, 255, 0.363);
+      }
+.navbar ul {
+  font-size: 22px;
+  font-family: "Prata", serif;
+  font-weight: 900;
+  font-style: normal;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+.navbar ul li {
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar ul li::before {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  width: 90%;
+  height: 4px;
+  background-color:  #daaa4a;
+  bottom: 5px;
+  left: 3px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.7s ease-in-out;
+}
+
+ .navbar ul li:hover {
+  border-radius: 5px;
+  
+  color: #daaa4a;
+}
+
+.navbar ul li:hover::before {
+  transform: scaleX(1);
+}
+
+.rev{
+  margin-top: 4px;
+  display: block;
+  border-radius: 19px;
+  border: none;
+  background-color: #daaa4a;
+  color: white;
+  text-decoration: none;
+}
+
+.rev {
+  margin-top: 2px;
+  border-radius: 4px;
+  background-color:#daaa4a;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  padding: 0px;
+  height: 45px;
+  width: 160px;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 36px; */
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.rev{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.rev:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 3px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.rev:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.rev:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+
+
+
+/* navbar css ends */
+        
+    /* top image css starts */
+
+    .topimage{
+      border-style: none;
+        object-fit: cover;
+        margin-top: 55px;
+    }
+    
+    .topimage h5,h4{
+        text-align: center;
+       
+        font-size: 40px;
+        position: relative;
+    }
+    .topimage h5{
+        font-family: "PT Serif", serif;
+        font-weight: 700;
+        font-style: normal;
+        margin-top: 163px;
+        color:#daaa4a;
+    }
+
+    .topimage h4{
+        font-family: "PT Serif", serif;
+        font-weight: 700;
+        font-style: normal;
+        color: hot #daaa4a;
+    }
+    /* top image css ends */
+
+    .head h1{
+      font-family: "Jacques Francois Shadow";
+      font-weight: 400;
+      font-style:normal;
+      font-size: 55px;
+      color: black;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    
+/* menu cards css starts */
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card_image {
+  position: relative;
+  max-height: 250px;
+}
+
+.card_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_price {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 0.25rem;
+  background-color: #c89b3f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card_price span {
+  font-size: 12px;
+  margin-top: -2px;
+}
+
+.note {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  border-radius: 0.25rem;
+  background-color: #c89b3f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  position: relative;
+  padding: 16px 12px 32px 24px;
+  margin: 16px 8px 8px 0;
+  max-height: 290px;
+  overflow-y: scroll;
+}
+
+.card_content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card_content::-webkit-scrollbar-track {
+  box-shadow: 0;
+  border-radius: 0;
+}
+
+.card_content::-webkit-scrollbar-thumb {
+  background: #c89b3f;
+  border-radius: 15px;
+}
+
+.card_title {
+  position: relative;
+  margin: 0 0 24px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card_title::after {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c89b3f;
+  content: "";
+}
+
+hr {
+  margin: 24px auto;
+  width: 50px;
+  border-top: 2px solid #c89b3f;
+}
+
+.card_text p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card_text p:last-child {
+  margin: 0;
+}
+
+/* menu cards css ends */
+
+
+/* footer css starts */
+
+footer {
+  
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  background-color: #c89b3f;
+  padding: 20px;
+  clear: both;
+}
+
+.footer-widgets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-about-widget, .footer-contact-widget, .footer-newsletter-widget {
+  flex-basis: 30%;
+  margin: 20px;
+}
+
+.footer-about-widget {
+  text-align: center;
+}
+
+.footer-contact-widget {
+  text-align: center;
+}
+
+.footer-newsletter-widget {
+  width: 100%;
+  text-align: center;
+}
+
+.input-container {
+  /* Add this to make the input and button inline-block elements */
+  display: flex;
+  align-items: center;
+}
+
+.input-container input[type="email"] {
+  /* Add this to make the input field take up the available space */
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.footer-widgets-container h2 {
+  font-family: "Jacques Francois Shadow", system-ui;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-widgets-container p {
+  margin-bottom: 20px;
+}
+
+.footer-widgets-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.footer-newsletter-widget button {
+  /* Modify the button styles to remove the padding and make it fit snugly to the right of the input field */
+  background-color: #daaa4a;
+  color: #000000;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: -10px; /* Add this to move the button to the right of the input field */
+}
+
+.footer-widgets-container button:hover {
+  color: #c89b3f;
+  background-color: #000000;
+}
+
+/* footer css ends */
+
+
+</style>
+</head>
+<body>
+
+     <!-- Navbar start -->
+
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="khao"><a class="navbar-brand" href="index.html" style="font-family: 'Jacques Francois Shadow','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 40px;"><strong>khao!</strong></a></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="Menu.html">Menu <span class="sr-only">(current)</span></a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="chefs.html">Chefs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Aboutus.html">About us</a>
+          </li>
+          <div class="nav-item ">
+            <a href="reservation.html" style="text-decoration: none;"> <button class="rev">Book a Table</button> </a>
+           </div>
+        </ul>
+      </div>
+    </nav>
+  
+      <!-- Navbar End -->
+
+      <!-- top image code starts -->
+      <div class="topimage">
+      <div class="card bg-dark text- #daaa4a">
+        <img src="Menu/Menu-top (2).jpg" class="card-img" alt="..." height="500px">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Our Menu</h5>
+          <h4 class="card-text">Discover our Exclusive menu</h4>
+          <hr>
+        </div>
+      </div>
+    </div>
+    
+
+       <!-- top image code ends -->
+
+      <hr>
+    
+      <div class="head">
+        <h1>Starter</h1>
+      </div>
+
+
+      <!-- starter menu cards starts -->
+
+      <div class="main">
+        <ul class="cards">
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <img src="https://assets.codepen.io/652/photo-1468777675496-5782faaea55b.jpeg" alt="mixed vegetable salad in a mason jar." />
+                <span class="card_price"><span>$</span>9</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Farmstand Salad</h2>
+                <div class="card_text">
+                  <p>Dig into the freshest veggies of the season! This salad-in-a-jar features a mixture of
+                    leafy greens and seasonal vegetables, fresh from the farmer's market.
+                  </p>
+                  <hr />
+                  <p>Served with your choice of dressing on the side: <strong>housemade ranch</strong>, <strong>cherry balsamic
+                      vinaigrette</strong>, <strong>creamy chipotle</strong>, <strong>avocado green goddess</strong>, or <strong>honey mustard</strong>. Add your choice
+                    of protein for $2 more.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+      
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <img src="https://assets.codepen.io/652/photo-1520174691701-bc555a3404ca.jpeg" alt="a Reuben sandwich on wax paper." />
+                <span class="card_price"><span>$</span>18</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Ultimate Reuben</h2>
+                <div class="card_text">
+                  <p>All great meals take time, but this one takes it to the next level! More than 650 hours
+                    of fermenting, brining, aging, and curing goes into each and every one of our legendary
+                    Reuben sandwiches.
+                  </p>
+                  <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye
+                    bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the
+                    pickle. The only thing we didn't make on the premises is the toothpick ( but we're
+                    looking into how to do that).
+                  </p>
+                  <hr />
+                  <p>This unforgettable sandwich has all of the classic Reuben elements: <strong>corned beef</strong>, <strong>rye
+                      bread</strong>, <strong>creamy Russian dressing</strong>, <strong>sauerkraut</strong>, plus a <strong>sweet gherkin pickle</strong>.
+                    No substitions please!
+                  </p>
+                  <p>Add a side of <strong>french fries</strong> or <strong>sweet potato fries</strong> for $2 more, or our
+                    <strong>housemade pub chips</strong> for $1.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+      
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <span class="note">Seasonal</span>
+                <img src="https://assets.codepen.io/652/photo-1544510808-91bcbee1df55.jpeg" alt="A side view of a plate of figs and berries." />
+                <span class="card_price"><span>$</span>16</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Fig &amp; Berry Plate</h2>
+                <div class="card_text">
+                  <p>A succulent sextet of fresh figs join with a selection of bodacious seasonal berries in
+                    this refreshing, shareable dessert.
+                  </p>
+                  <hr />
+                  <p>Choose your drizzle: <strong>cherry-balsamic vinegar</strong>, <strong>local honey</strong>, or
+                    <strong>housemade chocolate sauce</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 2nd -->
+
+      <div class="main">
+        <ul class="cards">
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <span class="note">Seasonal</span>
+                <img src="Menu/Breakfast/thai Prawns.jpg" alt="mixed vegetable salad in a mason jar." />
+                <span class="card_price"><span>$</span>9</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Thai Prawns</h2>
+                <div class="card_text">
+                  <p>Savor the vibrant flavors of our Thai Prawns, marinated in a zesty blend of herbs and spices, then grilled to perfection for a deliciously aromatic start to your meal. 
+                  </p>
+                  <hr />
+                  <p>Reiciendis quaerat dolores modi voluptas temporibus autem, neque repudiandae unde, saepe architecto perspiciatis sequi deserunt maxime, id corrupti velit officiis ea quod.</strong>, <strong>creamy chipotle</strong>, <strong>avocado green goddess</strong>, or <strong>honey mustard</strong>. Add your choice
+                    of protein for $2 more.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+      
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <img src="Menu/Breakfast/Sauteed Garlic.jpg" alt="a Reuben sandwich on wax paper." />
+                <span class="card_price"><span>$</span>18</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Sauteed Garlic</h2>
+                <div class="card_text"> 
+                  <p> Indulge in our Sautéed Garlic, where fresh garlic is perfectly sautéed to release its rich flavor, creating a savory appetizer that pairs wonderfully with any dish.
+                  </p>
+                  <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye
+                    bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the
+                    pickle. The only thing we didn't make on the premises is the toothpick ( but we're
+                    looking into how to do that).
+                  </p>
+                  <hr />
+                  <p>This unforgettable sandwich has all of the classic Reuben elements: <strong>corned beef</strong>, <strong>rye
+                      bread</strong>, <strong>creamy Russian dressing</strong>, <strong>sauerkraut</strong>, plus a <strong>sweet gherkin pickle</strong>.
+                    No substitions please!
+                  </p>
+                  <p>Add a side of <strong>french fries</strong> or <strong>sweet potato fries</strong> for $2 more, or our
+                    <strong>housemade pub chips</strong> for $1.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+      
+          <li class="cards_item">
+            <div class="card">
+              <div class="card_image">
+                <span class="note">Seasonal</span>
+                <img src="Menu/Breakfast/Paneer Tikka.jpg"alt="A side view of a plate of figs and berries." />
+                <span class="card_price"><span>$</span>16</span>
+              </div>
+              <div class="card_content">
+                <h2 class="card_title">Paneer tikka</h2>
+                <div class="card_text">
+                  <p>Enjoy our Paneer Tikka, featuring marinated cubes of paneer grilled to perfection, served with a tangy mint chutney for a delightful burst of flavor in every bite.
+                  </p>
+                  <hr />
+                  <p>Choose your drizzle: <strong>cherry-balsamic vinegar</strong>, <strong>local honey</strong>, or
+                    <strong>housemade chocolate sauce</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      
+    <!-- starter menu cards ends -->
+
+    <div class="head">
+      <h1>Main Course</h1>
+    </div>
+
+      
+    <!-- Main course menu card starts -->
+
+    <div class="main">
+      <ul class="cards">
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="Menu/Main Course/khung pao chicken.jpg" alt="mixed vegetable salad in a mason jar." />
+              <span class="card_price"><span>$</span>9</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Khung pao chicken</h2 >
+
+              <div class="card_text">
+                <p>Dive into a symphony of flavors with our Khung Pao Chicken, where tender chicken meets a spicy, savory sauce infused with roasted peanuts and fresh vegetables                </p>
+                <hr />
+                <p>Served with your choice of dressing on the side: <strong>housemade ranch</strong>, <strong>cherry balsamic
+                    vinaigrette</strong>, <strong>creamy chipotle</strong>, <strong>avocado green goddess</strong>, or <strong>honey mustard</strong>. Add your choice
+                  of protein for $2 more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="Menu/Main Course/Korean Bibimbag.jpg" alt="a Reuben sandwich on wax paper." />
+              <span class="card_price"><span>$</span>18</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Korean bibimbag</h2>
+              <div class="card_text">
+                <p>Experience a vibrant bowl of Korean Bibimbap, packed with a colorful array of vegetables, tender beef, and a perfectly fried egg, all drizzled with our house-made gochujang sauce.
+                </p>
+                <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye
+                  bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the
+                  pickle. The only thing we didn't make on the premises is the toothpick ( but we're
+                  looking into how to do that).
+                </p>
+                <hr />
+                <p>This unforgettable sandwich has all of the classic Reuben elements: <strong>corned beef</strong>, <strong>rye
+                    bread</strong>, <strong>creamy Russian dressing</strong>, <strong>sauerkraut</strong>, plus a <strong>sweet gherkin pickle</strong>.
+                  No substitions please!
+                </p>
+                <p>Add a side of <strong>french fries</strong> or <strong>sweet potato fries</strong> for $2 more, or our
+                  <strong>housemade pub chips</strong> for $1.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              
+              <img src="Menu/Main Course/laksa shirataki.jpg" alt="A side view of a plate of figs and berries." />
+              <span class="card_price"><span>$</span>16</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Laksa shirataki</h2>
+
+              <div class="card_text">
+                <p> Indulge in our Laksa Shirataki, a low-carb twist on a classic! Savory coconut broth meets the unique texture of shirataki noodles, garnished with fresh herbs and spices.                </p>
+                <hr />
+                <p>Choose your drizzle: <strong>cherry-balsamic vinegar</strong>, <strong>local honey</strong>, or
+                  <strong>housemade chocolate sauce</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- 2nd -->
+
+    <div class="main">
+      <ul class="cards">
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              
+              <img src="Menu/Main Course/Consectetur.jpg"alt="mixed vegetable salad in a mason jar." />
+              <span class="card_price"><span>$</span>9</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Consectetur</h2>
+              <div class="card_text">
+                <p>This dish features a delightful medley of ingredients that come together for a nourishing and flavorful experience, perfect for any occasion. 
+                </p>
+                <hr />
+                <p>Reiciendis quaerat dolores modi voluptas temporibus autem, neque repudiandae unde, saepe architecto perspiciatis sequi deserunt maxime, id corrupti velit officiis ea quod.</strong>, <strong>creamy chipotle</strong>, <strong>avocado green goddess</strong>, or <strong>honey mustard</strong>. Add your choice
+                  of protein for $2 more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="Menu/Main Course/Convallis augue.jpg" alt="a Reuben sandwich on wax paper." />
+              <span class="card_price"><span>$</span>18</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Convallis Augue</h2>
+              <div class="card_text">
+                <p>Enjoy a rich blend of tastes in our Convallis Augue, showcasing seasonal produce and aromatic herbs for a dish that’s both comforting and delicious.
+                </p>
+                <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye
+                  bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the
+                  pickle. The only thing we didn't make on the premises is the toothpick ( but we're
+                  looking into how to do that).
+                </p>
+                <hr />
+                <p>This unforgettable sandwich has all of the classic Reuben elements: <strong>corned beef</strong>, <strong>rye
+                    bread</strong>, <strong>creamy Russian dressing</strong>, <strong>sauerkraut</strong>, plus a <strong>sweet gherkin pickle</strong>.
+                  No substitions please!
+                </p>
+                <p>Add a side of <strong>french fries</strong> or <strong>sweet potato fries</strong> for $2 more, or our
+                  <strong>housemade pub chips</strong> for $1.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <span class="note">Seasonal</span>
+              <img src="Menu/Main Course/Duis tincidunt.jpg" alt="A side view of a plate of figs and berries." />
+              <span class="card_price"><span>$</span>16</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Duis tincidunt</h2>
+              <div class="card_text">
+                <p>Savor the layers of flavor in Duis Tincidunt, a beautifully crafted dish designed to tantalize your taste buds with every bite.
+                </p>
+                <hr />
+                <p>Choose your drizzle: <strong>cherry-balsamic vinegar</strong>, <strong>local honey</strong>, or
+                  <strong>housemade chocolate sauce</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+
+
+
+
+    <!-- Main course Menu card ends -->
+
+    <div class="head">
+      <h1>Drinks</h1>
+    </div>
+
+    <!-- drinks Menu card starts -->
+
+
+
+    <div class="main">
+      <ul class="cards">
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="Menu/Drink/Orange Mint.jpg" alt="mixed vegetable salad in a mason jar." />
+              <span class="card_price"><span>$</span>9</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Aenean eu</h2>
+              <div class="card_text">
+                <p> Indulge in the fresh and vibrant flavors of Aenean Eu, a beautifully crafted drink that combines seasonal ingredients for a wholesome and delicious experience.
+                </p>
+                <hr />
+                <p>Served with your choice of dressing on the side: <strong>housemade ranch</strong>, <strong>cherry balsamic
+                    vinaigrette</strong>, <strong>creamy chipotle</strong>, <strong>avocado green goddess</strong>, or <strong>honey mustard</strong>. Add your choice
+                  of protein for $2 more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img src="Menu/Drink/Nullam maximus.jpg" alt="a Reuben sandwich on wax paper." />
+              <span class="card_price"><span>$</span>18</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Nullam maximus</h2>
+              <div class="card_text">
+                <p>Experience the bold taste of Nullam Maximus, a dish that packs a punch with its rich flavors and perfectly balanced spices, guaranteed to satisfy your cravings.
+                </p>
+                <p>Every element of this extraordinary sandwich is handcrafted in our kitchens, from the rye
+                  bread baked from our secret recipe to the cave-aged Swiss cheese, right down to the
+                  pickle. The only thing we didn't make on the premises is the toothpick ( but we're
+                  looking into how to do that).
+                </p>
+                <hr />
+                <p>This unforgettable sandwich has all of the classic Reuben elements: <strong>corned beef</strong>, <strong>rye
+                    bread</strong>, <strong>creamy Russian dressing</strong>, <strong>sauerkraut</strong>, plus a <strong>sweet gherkin pickle</strong>.
+                  No substitions please!
+                </p>
+                <p>Add a side of <strong>french fries</strong> or <strong>sweet potato fries</strong> for $2 more, or our
+                  <strong>housemade pub chips</strong> for $1.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              
+              <img src="Menu/Drink/Fresh Lime.jpg" alt="A side view of a plate of figs and berries." />
+              <span class="card_price"><span>$</span>16</span>
+            </div>
+            <div class="card_content">
+              <h2 class="card_title">Fresh Lime</h2>
+              <div class="card_text">
+                <p> Brighten your day with our Fresh Lime, bursting with zesty goodness! Perfect for adding a refreshing twist to any dish or enjoyed on its own for a tangy treat
+                </p>
+                <hr />
+                <p>Choose your drizzle: <strong>cherry-balsamic vinegar</strong>, <strong>local honey</strong>, or
+                  <strong>housemade chocolate sauce</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 4th -->
+
+    
+
+
+
+
+
+
+    <!-- drinks menu cards ends -->
+
+    <!-- footer start -->
+
+    <footer>
+      <div class="footer-widgets-container">
+        <div class="footer-about-widget">
+          <h2>About Us</h2>
+          <p>Welcome to Khao, where every dish is a celebration of authentic flavors and culinary traditions. Inspired by the rich and diverse cuisines of Southeast Asia, we take pride in offering a menu that showcases the vibrant spices, fresh ingredients, and unique recipes that define this beloved culinary heritage.</p>
+        </div>
+        <div class="footer-contact-widget">
+          <h2>Contact Us</h2>
+          <p>Phone: 123-456-7890</p>
+          <p>Email: khao.foods@gmail.com(mailto:info@example.com)</p>
+          <p>Address: 123 Main St, Anytown, USA</p>
+        </div>
+        <div class="footer-newsletter-widget">
+          <h2>Newsletter</h2>
+          <p>You can trust us. We only send offers, not a single</p>
+          <div class="input-container">
+            <input type="email" placeholder="Email address">
+            <button>→</button>
+          </div>
+        </div>
+    </footer>
+
+    <!-- footer end -->
+</body>
+</html>
